@@ -206,7 +206,7 @@ D = 0.22999999999999998
 
 ### 2. Analytical Solution
 
-$\large{A = \frac{1}{1 + \frac{k_{ab}}{k_{ba}}  + \frac{k_{ac}}{k_{ca}} + \frac{k_{ad}}{k_{da}} }}$
+$$\large{A = \frac{1}{1 + \frac{k_{ab}}{k_{ba}}  + \frac{k_{ac}}{k_{ca}} + \frac{k_{ad}}{k_{da}} }}$$
 
 
 ```python
@@ -222,7 +222,7 @@ $\large{A = \frac{1}{1 + \frac{k_{ab}}{k_{ba}}  + \frac{k_{ac}}{k_{ca}} + \frac{
 
 -------
 
-$\large{B = \frac{\frac{k_{ab}}{k_{ba}}}{1 + \frac{k_{ab}}{k_{ba}}  + \frac{k_{ac}}{k_{ca}} + \frac{k_{ad}}{k_{da}} }}$
+$$\large{B = \frac{\frac{k_{ab}}{k_{ba}}}{1 + \frac{k_{ab}}{k_{ba}}  + \frac{k_{ac}}{k_{ca}} + \frac{k_{ad}}{k_{da}} }}$$
 
 
 ```python
@@ -238,7 +238,7 @@ $\large{B = \frac{\frac{k_{ab}}{k_{ba}}}{1 + \frac{k_{ab}}{k_{ba}}  + \frac{k_{a
 
 --------
 
-$\large{C = \frac{\frac{k_{ac}}{k_{ca}}}{1 + \frac{k_{ab}}{k_{ba}}  + \frac{k_{ac}}{k_{ca}} + \frac{k_{ad}}{k_{da}} }}$
+$$\large{C = \frac{\frac{k_{ac}}{k_{ca}}}{1 + \frac{k_{ab}}{k_{ba}}  + \frac{k_{ac}}{k_{ca}} + \frac{k_{ad}}{k_{da}} }}$$
 
 
 ```python
@@ -254,7 +254,7 @@ $\large{C = \frac{\frac{k_{ac}}{k_{ca}}}{1 + \frac{k_{ab}}{k_{ba}}  + \frac{k_{a
 
 ------------
 
-$\large{D = \frac{\frac{k_{ad}}{k_{da}}}{1 + \frac{k_{ab}}{k_{ba}}  + \frac{k_{ac}}{k_{ca}} + \frac{k_{ad}}{k_{da}} }}$
+$$\large{D = \frac{\frac{k_{ad}}{k_{da}}}{1 + \frac{k_{ab}}{k_{ba}}  + \frac{k_{ac}}{k_{ca}} + \frac{k_{ad}}{k_{da}} }}$$
 
 
 ```python
