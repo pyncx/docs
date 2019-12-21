@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Simulation - PyNCX</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Simulation";
+    var mkdocs_page_input_path = "ncx/NCX Model/NCX Model.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> PyNCX</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../..">Home</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../../WhyCodes/">Why Codes?</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Getting started</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/anaconda/">Guide to starting Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/lib/">Guide to Python Libraries</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/env/">Setting up Python Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/jupyter/">Installing Jupyter Notebook</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/git/">How to Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Markov Model</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../markov/Random Process/Random Process/">Random Process</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../markov/Random States/Random States/">Random States</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../markov/Three States Model/Three States Model/">Three States</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../markov/Four States Model/Four States Model/">Four States</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Simultaneous Diff Eqn</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../ode/Introduction/Introduction/">Introduction</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../ode/Three-States-Model/Three-States-Model/">Three States Model</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../ode/Five-States-Model/Five-States-Model/">Five States Model</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Algebraic Method</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algebra/Five-States-Model/Five-States-Model/">Five States Model</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">NCX</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Simulation
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#ncx-simulation-model">
+      NCX Simulation Model
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+      
+
+  <li class="toctree-l2">
+    <a href="#parameters">
+      Parameters
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#weighted-probability-vector">Weighted Probability Vector</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+
+
+
+      
+
+  <li class="toctree-l2">
+    <a href="#dataframe">
+      DataFrame
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+      
+
+  <li class="toctree-l2">
+    <a href="#results">
+      Results
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#markov-chain">Markov Chain</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">References</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../References/ref/">Reference</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">PyNCX</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>NCX &raquo;</li>
+        
+      
+    
+    <li>Simulation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h3 id="ncx-simulation-model">NCX Simulation Model</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
+sns<span style="color: #555555">.</span>set()
+<span style="color: #555555">%</span>matplotlib inline
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">random</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">random</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">pandas</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">pd</span>
+</pre></div>
+
+
+<hr />
+<h3 id="parameters">Parameters</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>K_EN1_ENO <span style="color: #555555">=</span> <span style="color: #FF6600">0.33</span>
+K_ENO_EN1 <span style="color: #555555">=</span> <span style="color: #FF6600">0.33</span>
+K_ENO_EN2 <span style="color: #555555">=</span> <span style="color: #FF6600">0.33</span>
+K_EN2_ENO <span style="color: #555555">=</span> <span style="color: #FF6600">0.33</span>
+
+K_EC1_ECO <span style="color: #555555">=</span> <span style="color: #FF6600">0.33</span>
+K_ECO_EC1 <span style="color: #555555">=</span> <span style="color: #FF6600">0.33</span>
+K_ECO_EC2 <span style="color: #555555">=</span> <span style="color: #FF6600">0.33</span>
+K_EC2_ECO <span style="color: #555555">=</span> <span style="color: #FF6600">0.33</span>
+</pre></div>
+
+
+<h4 id="weighted-probability-vector">Weighted Probability Vector</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>M <span style="color: #555555">=</span> {<span style="color: #CC3300">&quot;EN1&quot;</span>: [<span style="color: #FF6600">1</span> <span style="color: #555555">-</span> K_EN1_ENO,K_EN1_ENO,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>],
+    <span style="color: #CC3300">&quot;ENO&quot;</span>:  [K_ENO_EN1, <span style="color: #FF6600">1</span><span style="color: #555555">-</span>K_ENO_EN1<span style="color: #555555">-</span>K_ENO_EN2,K_ENO_EN2,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>],
+    <span style="color: #CC3300">&quot;EN2&quot;</span>:  [<span style="color: #FF6600">0</span>, K_EN2_ENO, <span style="color: #FF6600">1</span><span style="color: #555555">-</span>K_EN2_ENO,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>],
+
+
+    <span style="color: #CC3300">&quot;EC1&quot;</span>:  [<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">1</span><span style="color: #555555">-</span>K_EC1_ECO,K_EC1_ECO,<span style="color: #FF6600">0</span>],
+    <span style="color: #CC3300">&quot;ECO&quot;</span>:  [<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,K_ECO_EC1,<span style="color: #FF6600">1</span><span style="color: #555555">-</span>K_ECO_EC1<span style="color: #555555">-</span>K_ECO_EC2,K_ECO_EC2],
+    <span style="color: #CC3300">&quot;EC2&quot;</span>:  [<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,K_EC2_ECO,<span style="color: #FF6600">1</span><span style="color: #555555">-</span>K_EC2_ECO]}
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>M
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>{&#39;EN1&#39;: [0.6699999999999999, 0.33, 0, 0, 0, 0],
+ &#39;ENO&#39;: [0.33, 0.3399999999999999, 0.33, 0, 0, 0],
+ &#39;EN2&#39;: [0, 0.33, 0.6699999999999999, 0, 0, 0],
+ &#39;EC1&#39;: [0, 0, 0, 0.6699999999999999, 0.33, 0],
+ &#39;ECO&#39;: [0, 0, 0, 0.33, 0.3399999999999999, 0.33],
+ &#39;EC2&#39;: [0, 0, 0, 0, 0.33, 0.6699999999999999]}
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">class</span> <span style="color: #00AA88; font-weight: bold">Channel</span>(<span style="color: #336666">object</span>):
+    <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;This class represents a ncx channel&#39;&#39;&#39;</span>
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">__init__</span>(<span style="color: #336666">self</span>,state,x,y):
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>x <span style="color: #555555">=</span> x
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>y <span style="color: #555555">=</span> y
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>states <span style="color: #555555">=</span> [<span style="color: #CC3300">&quot;EN1&quot;</span>,<span style="color: #CC3300">&quot;ENO&quot;</span>,<span style="color: #CC3300">&quot;EN2&quot;</span>,<span style="color: #CC3300">&quot;EC1&quot;</span>,<span style="color: #CC3300">&quot;ECO&quot;</span>, <span style="color: #CC3300">&quot;EC2&quot;</span>]
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>state <span style="color: #555555">=</span> state
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">update</span>(<span style="color: #336666">self</span>,M):
+        <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Update the state based on markov model&#39;&#39;&#39;</span>
+        new_state <span style="color: #555555">=</span> np<span style="color: #555555">.</span>random<span style="color: #555555">.</span>choice(<span style="color: #336666">self</span><span style="color: #555555">.</span>states, p <span style="color: #555555">=</span> M[<span style="color: #336666">self</span><span style="color: #555555">.</span>state])
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>state <span style="color: #555555">=</span> new_state
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">flip</span>(<span style="color: #336666">self</span>):
+        <span style="color: #006699; font-weight: bold">if</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>state <span style="color: #000000; font-weight: bold">in</span> [<span style="color: #CC3300">&quot;EN1&quot;</span>,<span style="color: #CC3300">&quot;EC1&quot;</span>]:
+            <span style="color: #336666">self</span><span style="color: #555555">.</span>state <span style="color: #555555">=</span> random<span style="color: #555555">.</span>choice([<span style="color: #CC3300">&quot;EN1&quot;</span>,<span style="color: #CC3300">&quot;EC1&quot;</span>])
+        <span style="color: #006699; font-weight: bold">elif</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>state <span style="color: #000000; font-weight: bold">in</span> [<span style="color: #CC3300">&quot;EN2&quot;</span>,<span style="color: #CC3300">&quot;EC2&quot;</span>]:
+            <span style="color: #336666">self</span><span style="color: #555555">.</span>state <span style="color: #555555">=</span> random<span style="color: #555555">.</span>choice([<span style="color: #CC3300">&quot;EN2&quot;</span>,<span style="color: #CC3300">&quot;EC2&quot;</span>])
+</pre></div>
+
+
+<hr />
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">class</span> <span style="color: #00AA88; font-weight: bold">System</span>(<span style="color: #336666">object</span>):
+    <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;This class represents a 2D lattice system of NCX channels&#39;&#39;&#39;</span>
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">__init__</span>(<span style="color: #336666">self</span>,Channel,M):
+
+        <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;lattice dimension&#39;&#39;&#39;</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>Lx <span style="color: #555555">=</span> <span style="color: #FF6600">20</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>Ly <span style="color: #555555">=</span> <span style="color: #FF6600">20</span>
+
+        <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Markov transition matrix&#39;&#39;&#39;</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>M <span style="color: #555555">=</span> M
+
+        <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;A single channel object&#39;&#39;&#39;</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>Channel <span style="color: #555555">=</span> Channel
+
+        <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;concentration of ions&#39;&#39;&#39;</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>nNa_out <span style="color: #555555">=</span> <span style="color: #FF6600">1000</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>nCa_out <span style="color: #555555">=</span> <span style="color: #FF6600">1000</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>nNa_in <span style="color: #555555">=</span> <span style="color: #FF6600">1000</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>nCa_in <span style="color: #555555">=</span> <span style="color: #FF6600">1000</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>nNa_o <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>nCa_o <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+
+        <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;concentration of channels&#39;&#39;&#39;</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>nEN1 <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>nENO <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>nEN2 <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>nEC1 <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>nECO <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>nEC2 <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+
+        <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Initiation channel 2D system&#39;&#39;&#39;</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>U <span style="color: #555555">=</span> [[<span style="color: #CC3300">&quot;o&quot;</span> <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #336666">self</span><span style="color: #555555">.</span>Lx)]<span style="color: #006699; font-weight: bold">for</span> j <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #336666">self</span><span style="color: #555555">.</span>Ly)]
+
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>DATA <span style="color: #555555">=</span>[]
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">start</span>(<span style="color: #336666">self</span>):
+        <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #336666">self</span><span style="color: #555555">.</span>Lx):
+            <span style="color: #006699; font-weight: bold">for</span> j <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #336666">self</span><span style="color: #555555">.</span>Ly):
+
+                r_state <span style="color: #555555">=</span> random<span style="color: #555555">.</span>choice([<span style="color: #CC3300">&quot;EC1&quot;</span>,<span style="color: #CC3300">&quot;EN1&quot;</span>])
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>U[i][j] <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>Channel(r_state,i,j)
+
+                <span style="color: #006699; font-weight: bold">if</span> r_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EN1&quot;</span>:
+                    <span style="color: #336666">self</span><span style="color: #555555">.</span>nEN1 <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                <span style="color: #006699; font-weight: bold">if</span> r_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;ENO&quot;</span>:
+                    <span style="color: #336666">self</span><span style="color: #555555">.</span>nENO <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                    <span style="color: #336666">self</span><span style="color: #555555">.</span>nNa_o <span style="color: #555555">+=</span><span style="color: #FF6600">3</span>
+                <span style="color: #006699; font-weight: bold">if</span> r_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EN2&quot;</span>:
+                    <span style="color: #336666">self</span><span style="color: #555555">.</span>nEN2 <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+
+                <span style="color: #006699; font-weight: bold">if</span> r_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EC1&quot;</span>:
+                    <span style="color: #336666">self</span><span style="color: #555555">.</span>nEC1 <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                <span style="color: #006699; font-weight: bold">if</span> r_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;ECO&quot;</span>:
+                    <span style="color: #336666">self</span><span style="color: #555555">.</span>nECO <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                    <span style="color: #336666">self</span><span style="color: #555555">.</span>nCa_o <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                <span style="color: #006699; font-weight: bold">if</span> r_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EC2&quot;</span>:
+                    <span style="color: #336666">self</span><span style="color: #555555">.</span>nEC2 <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+
+
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">run</span>(<span style="color: #336666">self</span>, verbose <span style="color: #555555">=</span> <span style="color: #336666">False</span>):
+        <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #336666">self</span><span style="color: #555555">.</span>Lx):
+            <span style="color: #006699; font-weight: bold">for</span> j <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #336666">self</span><span style="color: #555555">.</span>Ly):
+                new_state <span style="color: #555555">=</span> <span style="color: #336666">None</span> 
+                old_state <span style="color: #555555">=</span> <span style="color: #336666">None</span> 
+                channel <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>U[i][j]
+                old_state <span style="color: #555555">=</span> channel<span style="color: #555555">.</span>state
+                <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;generate the next markov state&#39;&#39;&#39;</span>
+                channel<span style="color: #555555">.</span>update(<span style="color: #336666">self</span><span style="color: #555555">.</span>M)
+                new_state <span style="color: #555555">=</span> channel<span style="color: #555555">.</span>state
+
+                <span style="color: #006699; font-weight: bold">if</span> new_state <span style="color: #555555">!=</span> old_state:
+
+                    <span style="color: #006699; font-weight: bold">if</span> verbose:
+                        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;updated from&quot;</span>, old_state, <span style="color: #CC3300">&quot; to &quot;</span>, new_state,\
+                          <span style="color: #CC3300">&quot; at &quot;</span>, channel<span style="color: #555555">.</span>x, channel<span style="color: #555555">.</span>y)
+
+
+                    <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;update the ion concentration&#39;&#39;&#39;</span>
+                    <span style="color: #006699; font-weight: bold">if</span> new_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EN1&quot;</span> <span style="color: #000000; font-weight: bold">and</span> old_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;ENO&quot;</span>:
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nNa_in <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nNa_o <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nEN1 <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nENO <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+
+                    <span style="color: #006699; font-weight: bold">elif</span> new_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;ENO&quot;</span> <span style="color: #000000; font-weight: bold">and</span> old_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EN1&quot;</span>:
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nENO <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nEN1 <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nNa_o <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nNa_in <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+
+                    <span style="color: #006699; font-weight: bold">elif</span> new_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;ENO&quot;</span> <span style="color: #000000; font-weight: bold">and</span> old_state <span style="color: #555555">==</span><span style="color: #CC3300">&quot;EN2&quot;</span>:
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nENO <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nEN2 <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nNa_o <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nNa_out <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+
+
+                    <span style="color: #006699; font-weight: bold">elif</span> new_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EN2&quot;</span> <span style="color: #000000; font-weight: bold">and</span> old_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;ENO&quot;</span>:
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nNa_out <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nNa_o <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nEN2 <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nENO <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+
+
+
+                    <span style="color: #006699; font-weight: bold">elif</span> new_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EC1&quot;</span> <span style="color: #000000; font-weight: bold">and</span> old_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;ECO&quot;</span>:
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nCa_in <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nCa_o <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nEC1 <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nECO <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+
+                    <span style="color: #006699; font-weight: bold">elif</span> new_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;ECO&quot;</span> <span style="color: #000000; font-weight: bold">and</span> old_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EC1&quot;</span>:
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nECO <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nEC1 <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nCa_o <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nCa_in <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+
+                    <span style="color: #006699; font-weight: bold">elif</span> new_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;ECO&quot;</span> <span style="color: #000000; font-weight: bold">and</span> old_state <span style="color: #555555">==</span><span style="color: #CC3300">&quot;EC2&quot;</span>:
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nECO <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nEC2 <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nCa_o <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nCa_out <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+
+
+                    <span style="color: #006699; font-weight: bold">elif</span> new_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EC2&quot;</span> <span style="color: #000000; font-weight: bold">and</span> old_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;ECO&quot;</span>:
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nCa_out <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nCa_o <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nEC2 <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nECO <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+
+                <span style="color: #006699; font-weight: bold">else</span>:
+                    <span style="color: #006699; font-weight: bold">if</span> verbose:
+                        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;not updated&quot;</span>,<span style="color: #CC3300">&quot; old is &quot;</span>, old_state,\
+                          <span style="color: #CC3300">&quot; new is &quot;</span>,new_state,\
+                          <span style="color: #CC3300">&quot;at&quot;</span>, channel<span style="color: #555555">.</span>x, channel<span style="color: #555555">.</span>y)
+
+                <span style="color: #006699; font-weight: bold">if</span> channel<span style="color: #555555">.</span>state <span style="color: #000000; font-weight: bold">in</span> [<span style="color: #CC3300">&quot;EN1&quot;</span>,<span style="color: #CC3300">&quot;EN2&quot;</span>,<span style="color: #CC3300">&quot;EC1&quot;</span>,<span style="color: #CC3300">&quot;EC2&quot;</span>]:    
+                    channel<span style="color: #555555">.</span>flip()
+                    fliped_state <span style="color: #555555">=</span> channel<span style="color: #555555">.</span>state
+                    <span style="color: #006699; font-weight: bold">if</span> verbose:
+                        <span style="color: #006699; font-weight: bold">print</span>(<span style="color: #CC3300">&quot;Flipped from &quot;</span>, new_state, <span style="color: #CC3300">&quot; to &quot;</span>, fliped_state)
+
+                    <span style="color: #006699; font-weight: bold">if</span> new_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EN1&quot;</span>:
+                        <span style="color: #006699; font-weight: bold">if</span> fliped_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EC1&quot;</span>:
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nEN1 <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nEC1 <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                    <span style="color: #006699; font-weight: bold">elif</span> new_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EN2&quot;</span>:
+                        <span style="color: #006699; font-weight: bold">if</span> fliped_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EC2&quot;</span>:
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nEN2 <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nEC2 <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+
+                    <span style="color: #006699; font-weight: bold">elif</span> new_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EC1&quot;</span>:
+                        <span style="color: #006699; font-weight: bold">if</span> fliped_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EN1&quot;</span>:
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nEC1 <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nEN1 <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+                    <span style="color: #006699; font-weight: bold">elif</span> new_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EC2&quot;</span>:
+                        <span style="color: #006699; font-weight: bold">if</span> fliped_state <span style="color: #555555">==</span> <span style="color: #CC3300">&quot;EN2&quot;</span>:
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nEC2 <span style="color: #555555">-=</span> <span style="color: #FF6600">1</span>
+                            <span style="color: #336666">self</span><span style="color: #555555">.</span>nEN2 <span style="color: #555555">+=</span> <span style="color: #FF6600">1</span>
+
+
+
+                <span style="color: #336666">self</span><span style="color: #555555">.</span>U[i][j] <span style="color: #555555">=</span> channel
+
+
+
+
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">simulate</span>(<span style="color: #336666">self</span>,T):
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>DATA <span style="color: #555555">=</span>[]
+        <span style="color: #006699; font-weight: bold">for</span> t <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(T):
+            <span style="color: #336666">self</span><span style="color: #555555">.</span>run()
+            <span style="color: #336666">self</span><span style="color: #555555">.</span>DATA<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;time&quot;</span> : t,\
+                              <span style="color: #CC3300">&quot;EN1&quot;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>nEN1,\
+                              <span style="color: #CC3300">&quot;ENO&quot;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>nENO,\
+                              <span style="color: #CC3300">&quot;EN2&quot;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>nEN2,\
+                              <span style="color: #CC3300">&quot;EC1&quot;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>nEC1,\
+                              <span style="color: #CC3300">&quot;EC2&quot;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>nEC2,\
+                              <span style="color: #CC3300">&quot;ECO&quot;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>nECO,\
+                              <span style="color: #CC3300">&quot;Na_out&quot;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>nNa_out,\
+                              <span style="color: #CC3300">&quot;Na_in&quot;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>nNa_in,\
+                              <span style="color: #CC3300">&quot;Na_occ&quot;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>nNa_o,\
+                              <span style="color: #CC3300">&quot;CA_occ&quot;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>nCa_o,\
+                              <span style="color: #CC3300">&quot;Ca_in&quot;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>nCa_in,\
+                              <span style="color: #CC3300">&quot;Ca_out&quot;</span>: <span style="color: #336666">self</span><span style="color: #555555">.</span>nCa_out})
+</pre></div>
+
+
+<h3 id="simulation">Simulation</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>S <span style="color: #555555">=</span> System(Channel,M)
+S<span style="color: #555555">.</span>start()
+S<span style="color: #555555">.</span>simulate(T<span style="color: #555555">=</span><span style="color: #FF6600">100</span>)
+</pre></div>
+
+
+<h3 id="dataframe">DataFrame</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DF <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame(S<span style="color: #555555">.</span>DATA)
+DF<span style="color: #555555">.</span>head(<span style="color: #FF6600">5</span>)
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>CA_occ</th>
+      <th>Ca_in</th>
+      <th>Ca_out</th>
+      <th>EC1</th>
+      <th>EC2</th>
+      <th>ECO</th>
+      <th>EN1</th>
+      <th>EN2</th>
+      <th>ENO</th>
+      <th>Na_in</th>
+      <th>Na_occ</th>
+      <th>Na_out</th>
+      <th>time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>76</td>
+      <td>924</td>
+      <td>1000</td>
+      <td>120</td>
+      <td>0</td>
+      <td>76</td>
+      <td>140</td>
+      <td>0</td>
+      <td>64</td>
+      <td>936</td>
+      <td>64</td>
+      <td>1000</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>66</td>
+      <td>909</td>
+      <td>1025</td>
+      <td>130</td>
+      <td>25</td>
+      <td>66</td>
+      <td>96</td>
+      <td>21</td>
+      <td>62</td>
+      <td>917</td>
+      <td>62</td>
+      <td>1021</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>76</td>
+      <td>880</td>
+      <td>1044</td>
+      <td>86</td>
+      <td>42</td>
+      <td>76</td>
+      <td>106</td>
+      <td>35</td>
+      <td>55</td>
+      <td>912</td>
+      <td>55</td>
+      <td>1033</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>60</td>
+      <td>880</td>
+      <td>1060</td>
+      <td>90</td>
+      <td>40</td>
+      <td>60</td>
+      <td>91</td>
+      <td>62</td>
+      <td>57</td>
+      <td>901</td>
+      <td>57</td>
+      <td>1042</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>48</td>
+      <td>884</td>
+      <td>1068</td>
+      <td>93</td>
+      <td>51</td>
+      <td>48</td>
+      <td>84</td>
+      <td>58</td>
+      <td>66</td>
+      <td>893</td>
+      <td>66</td>
+      <td>1041</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3 id="results">Results</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DF<span style="color: #555555">.</span>plot(x <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;time&quot;</span>, y <span style="color: #555555">=</span>[<span style="color: #CC3300">&quot;Ca_in&quot;</span>,<span style="color: #CC3300">&quot;Ca_out&quot;</span>,<span style="color: #CC3300">&quot;Na_in&quot;</span>,<span style="color: #CC3300">&quot;Na_out&quot;</span>],figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">15</span>,<span style="color: #FF6600">8</span>])
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&amp;lt;matplotlib.axes._subplots.AxesSubplot at 0x10b259f60&amp;gt;
+</pre></div>
+
+
+<p><img alt="png" src="../output_16_1.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DF<span style="color: #555555">.</span>plot(x <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;time&quot;</span>, y <span style="color: #555555">=</span>[<span style="color: #CC3300">&quot;EN1&quot;</span>,<span style="color: #CC3300">&quot;ENO&quot;</span>,<span style="color: #CC3300">&quot;EN2&quot;</span>,<span style="color: #CC3300">&quot;EC1&quot;</span>,<span style="color: #CC3300">&quot;ECO&quot;</span>,<span style="color: #CC3300">&quot;EC2&quot;</span>],figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">15</span>,<span style="color: #FF6600">8</span>])
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&amp;lt;matplotlib.axes._subplots.AxesSubplot at 0x1a1da2dba8&amp;gt;
+</pre></div>
+
+
+<p><img alt="png" src="../output_17_1.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DF<span style="color: #555555">.</span>plot(x <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;time&quot;</span>, y <span style="color: #555555">=</span>[<span style="color: #CC3300">&quot;EN1&quot;</span>,<span style="color: #CC3300">&quot;ENO&quot;</span>,<span style="color: #CC3300">&quot;EN2&quot;</span>],figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">15</span>,<span style="color: #FF6600">8</span>])
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&amp;lt;matplotlib.axes._subplots.AxesSubplot at 0x1a1dd50390&amp;gt;
+</pre></div>
+
+
+<p><img alt="png" src="../output_18_1.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DF<span style="color: #555555">.</span>plot(x <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;time&quot;</span>, y <span style="color: #555555">=</span>[<span style="color: #CC3300">&quot;EC1&quot;</span>,<span style="color: #CC3300">&quot;ECO&quot;</span>,<span style="color: #CC3300">&quot;EC2&quot;</span>],figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">15</span>,<span style="color: #FF6600">8</span>])
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&amp;lt;matplotlib.axes._subplots.AxesSubplot at 0x1a1d9a76d8&amp;gt;
+</pre></div>
+
+
+<p><img alt="png" src="../output_19_1.png" /></p>
+<h4 id="markov-chain">Markov Chain</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>C <span style="color: #555555">=</span> Channel(<span style="color: #CC3300">&quot;EN1&quot;</span>,<span style="color: #FF6600">2</span>,<span style="color: #FF6600">2</span>)
+<span style="color: #006699; font-weight: bold">print</span>(C<span style="color: #555555">.</span>state)
+<span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">10</span>):
+    C<span style="color: #555555">.</span>update(M)
+    <span style="color: #006699; font-weight: bold">print</span>(C<span style="color: #555555">.</span>state)
+    C<span style="color: #555555">.</span>flip()
+    <span style="color: #006699; font-weight: bold">print</span>(C<span style="color: #555555">.</span>state)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>EN1
+ENO
+ENO
+ENO
+ENO
+ENO
+ENO
+EN1
+EC1
+EC1
+EN1
+ENO
+ENO
+EN2
+EC2
+ECO
+ECO
+EC2
+EN2
+EN2
+EC2
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../References/ref/" class="btn btn-neutral float-right" title="Reference">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../../algebra/Five-States-Model/Five-States-Model/" class="btn btn-neutral" title="Five States Model"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../../algebra/Five-States-Model/Five-States-Model/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../../References/ref/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

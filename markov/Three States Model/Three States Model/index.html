@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Three States - PyNCX</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Three States";
+    var mkdocs_page_input_path = "markov/Three States Model/Three States Model.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> PyNCX</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../..">Home</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../../WhyCodes/">Why Codes?</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Getting started</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/anaconda/">Guide to starting Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/lib/">Guide to Python Libraries</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/env/">Setting up Python Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/jupyter/">Installing Jupyter Notebook</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/git/">How to Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Markov Model</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../Random Process/Random Process/">Random Process</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../Random States/Random States/">Random States</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Three States
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#three-states-markov-model">
+      Three States Markov Model
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#master-equation-of-three-state-model">Master Equation of Three State Model</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#analytical-solution">Analytical Solution</a>
+        </li>
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#monte-carlo-simulation">
+      Monte Carlo Simulation
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#weighted-probability-vector">Weighted Probability Vector</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+          
+
+  <li class="toctree-l3">
+    <a href="#simulation">
+      Simulation
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l3">
+    <ul class="subnav-l3 toc-hidden">
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#counting-and-ensamble-everage-of-states">Counting and Ensamble everage of states</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#data-frame">Data Frame</a>
+        </li>
+    
+      
+        <li class="toctree-l4">
+          <a class="toctree-l5" href="#mean-and-standard-deviation-of-states">Mean and Standard deviation of states</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#plot-equilibrium">Plot: Equilibrium</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../Four States Model/Four States Model/">Four States</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Simultaneous Diff Eqn</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../ode/Introduction/Introduction/">Introduction</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../ode/Three-States-Model/Three-States-Model/">Three States Model</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../ode/Five-States-Model/Five-States-Model/">Five States Model</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Algebraic Method</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algebra/Five-States-Model/Five-States-Model/">Five States Model</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">NCX</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../ncx/NCX Model/NCX Model/">Simulation</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">References</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../References/ref/">Reference</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">PyNCX</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Markov Model &raquo;</li>
+        
+      
+    
+    <li>Three States</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="three-states-markov-model">Three States Markov Model</h2>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">pandas</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">pd</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
+sns<span style="color: #555555">.</span>set()
+<span style="color: #555555">%</span>matplotlib inline
+</pre></div>
+
+
+<p>Consider a 3 state Markov model as shown in the figure below.</p>
+<p><img alt="img" src="../img/three-states.png" /></p>
+<h3 id="master-equation-of-three-state-model">Master Equation of Three State Model</h3>
+<ul>
+<li>C ,O, I: fraction of states in closed, open and inactive state</li>
+<li>/( K_{ci} /) =  rate of transition from state C to state I and so on</li>
+</ul>
+<p><strong>Condition of Equilibrium</strong>: Influx is equal to outflux</p>
+<p>$$K_{co}.C =  K_{oc}.O$$
+$$K_{oi}.O  =  K_{io}.I$$
+$$K_{ic}.I    =  K_{ci}.C$$</p>
+<p>The <strong>condition of detailed balance</strong> : 
+$$K_{co}.K_{oi}.K_{ic} = K_{oc}.K_{io}.K_{ci}$$</p>
+<p>I.e. The total transitions in clockwise direction is equal to total transitions in counter clockwise direction</p>
+<p>Central task: Can we derive the fraction of states at equilibrium?</p>
+<p>Answer: Yes, but for large degrees of freedom (states), it is tedious. We need </p>
+<ul>
+<li>method of simulation or </li>
+<li>numerical methods: <ul>
+<li>Simultaneous differential equations </li>
+<li>Algebric Methods</li>
+</ul>
+</li>
+</ul>
+<p>For equilibrium condition, we get</p>
+<p>$$k_{co} c = k_{oc} o =&gt; c = \frac{k_{oc}}{k_{co}}o$$</p>
+<p>$$k_{oi} o = k_{io} i =&gt; i = \frac{k_{oi}}{k_{io}}o$$</p>
+<p>$$k_{ic} i = k_{ci} c$$</p>
+<p>$$ o + c + i = 1$$</p>
+<h3 id="analytical-solution">Analytical Solution</h3>
+<ul>
+<li>Identifying equilibrium condition and calculation of the fraction of states is important for calculation of </li>
+<li>ion concentration inside and outside of the membrane (for example outward sodium current or inward calcium current).</li>
+<li>
+<p>Potential gradient between in and out of the membrane etc.</p>
+</li>
+<li>
+<p>An ion channel can be any state at any time. The rate constants like (K_ab) which represents the rate of transition from state A to B. Channel may take fraction of time to go from one state to another. In that situation the rate constant is modified by K*dt (for example in Monte Carlo simulation)</p>
+</li>
+<li>
+<p><strong>Why do we need condition of equilibrium?</strong> The real biological system is assumed to be equilibrium at a given environment. For a specific protocol, we can calculate the rate constants from experiments and design the models based on those rate constants and available states (Open, Closed, Inactive etc). Model give us further insights to understand the dynamics of the system. Statistical calculations like finding fraction of states at a given time or any other average values are possible only when there is an equilibrium.</p>
+</li>
+<li>
+<p><strong>How do we know whether it is equilibrium or not?</strong> In fact, at equilibrium there is constant flow from one state to another state. It feels like there is no extra accumulation over a specific state. This is represented by equations like /( N<em>K_{co}</em>C = N<em>K_{oc}</em>O /). I.e. Consider N ion Channels, the population transitioning from C state to O is equal to the population transitioning from O to C state.</p>
+</li>
+<li>
+<p>Implementing three different conditions of equilibrium, one can derive the single equation called the “principle of detailed balance”. Which means the flow of states in a clockwise direction is equal to the flow in anticlockwise direction.</p>
+</li>
+<li>
+<p>Using the above conditions, we can easily derive the fraction of states in terms of rate constants. It is not practical to find analytical solution like this in case of large no of states. Some Computational technique is required. </p>
+</li>
+<li>
+<p>For system which can be brought to the equilibrium condition, there exist different ways to solve : MonteCarlo Simulation, Numerical Methods ( Simultaneous differential equations, Algebraic methods). We can also study the system not in equilibrium where simultaneous differential equation method can be used but it leads to chaotic system for example arrhythmia, long QT syndrome etc. </p>
+</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>k_oi,k_oc <span style="color: #555555">=</span> <span style="color: #FF6600">0.5</span>,<span style="color: #FF6600">0.9</span>
+k_io,k_ic <span style="color: #555555">=</span> <span style="color: #FF6600">0.3</span>,<span style="color: #FF6600">0.72</span>
+k_co,k_ci <span style="color: #555555">=</span> <span style="color: #FF6600">0.6</span>,<span style="color: #FF6600">0.8</span>
+dt <span style="color: #555555">=</span> <span style="color: #FF6600">0.01</span>
+</pre></div>
+
+
+<p>$$\large{O = \frac{1}{1 + \frac{k_{oc}}{k_{co}} + \frac{k_{oi}}{k_{io}}}}$$</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span> <span style="color: #FF6600">1</span><span style="color: #555555">/</span>(<span style="color: #FF6600">1</span><span style="color: #555555">+</span>(k_oc<span style="color: #555555">/</span>k_co)<span style="color: #555555">+</span>(k_oi<span style="color: #555555">/</span>k_io))
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>0.24
+</pre></div>
+
+
+<p>$$\large{C = \frac{\frac{k_{oc}}{k_{co}}}{1 + \frac{k_{oc}}{k_{co}} + \frac{k_{oi}}{k_{io}}}}$$</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span> (k_oc<span style="color: #555555">/</span>k_co)<span style="color: #555555">/</span>(<span style="color: #FF6600">1</span><span style="color: #555555">+</span>(k_oc<span style="color: #555555">/</span>k_co)<span style="color: #555555">+</span>(k_oi<span style="color: #555555">/</span>k_io))
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>0.36
+</pre></div>
+
+
+<p>$$\large{I = \frac{\frac{k_{oi}}{k_{io}}}{1 + \frac{k_{oc}}{k_{co}} + \frac{k_{oi}}{k_{io}}}}$$</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span> (k_oi<span style="color: #555555">/</span>k_io)<span style="color: #555555">/</span>(<span style="color: #FF6600">1</span><span style="color: #555555">+</span>(k_oc<span style="color: #555555">/</span>k_co)<span style="color: #555555">+</span>(k_oi<span style="color: #555555">/</span>k_io))
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>0.39999999999999997
+</pre></div>
+
+
+<h3 id="monte-carlo-simulation">Monte Carlo Simulation</h3>
+<p>Monte carlo simulation is a technique to generate samples based on certain distribution. In statistical Mechanics we use this technique to simulate the system of gas ( idle and real gas) where we used the Blotzman fraction (based on Hamiltonian of the system $(\exp(E/KT)$) for simulation. </p>
+<p>In our case, for each of the state we have probability distribution vector. For example if the current state is in state “O”. The probability vector is /([K_{oo}<em>dt, K_{oc}</em>dt, K_{oi}*dt/)$ which represents the probability for state to remain at ‘O’, go to ‘C’ state and go to ‘I’ state respectively.</p>
+<p><strong>How do we do monte carlo simulation?</strong>
+- We start with N number of ion channels. 
+- For each ion channel we create a Markov chain like  ---O---C---I---i---O---- time 0 to T. In this Markov chain, generation of every new state is totally based on current state only. Not on the history of the past states (Red cross X). Due to this property, it is called memoryless chain of states.
+- From simulated data, we can calculate the fraction of the states out of N channels. We can calculate this for any instant of time and make a plot to see whether there is equilibrium or not.</p>
+<p><strong>Central task</strong>: Can we derive the fraction of states at equilibrium?
+Yes, following are the steps:
+- Start with N random ion channels 
+- For each channel, generate a new state based on conditional probability.
+- At given point of time calculate the fraction of each state out of total population N along with statistical error and plot the result over time
+- Find out the equilibrium and mean fluctuation (standard deviation). Clue: By increasing total population (N), fluctuation can be reduced</p>
+<p><img alt="img" src="../img/mchain3.png" /></p>
+<ul>
+<li>The biggest idea behind why method of simulation is valid for a system like muli-state ion channel is “Principle of ergodicity”. Which means observation of a single ion channel for a very long time (T -&gt; infty) is equivalent to the observation of large number of  ion channels (N-&gt; infty) at a specific time.</li>
+<li>The first table is a collection of rate constant. Where as the second table is for comparison of analytical solution and expectation values from simulation. There is a certain error due to sampling through simulation where data appears to be fluctuation around the mean value equal to analytical value. One can represent the expectation value using standard error.</li>
+</ul>
+<p>The associated conditional probabilities can be arranged to represent weighted probability vector for each state</p>
+<p><img alt="img" src="../img/mchain-table.png" /></p>
+<p><strong>Challenge</strong>: What is the guarantee that we will reach to the system at equilibrium starting from random initial state?</p>
+<p><strong>The clue is Ergodicity</strong>: the time average of the system(T $\rightarrow \infty$) equal to the ensemble average ($N \rightarrow \infty$)</p>
+<h4 id="weighted-probability-vector">Weighted Probability Vector</h4>
+<p>We can arrange the conditional probability to create a weighted probability vactor for Monte Carlo Simulation</p>
+<p>$$P(O) = [1-(k_oc + k_oi)d\tau,   k_oc d\tau,   k_oi d\tau]$$</p>
+<p>$$P(C) = [k_co d\tau,  1-(k_co + k_ci) d\tau,    k_ci d\tau]$$</p>
+<p>$$P(I) = [k_io d\tau,  k_ic d\tau,   1 - (k_io + k_ic) d\tau]$$</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>M <span style="color: #555555">=</span> {<span style="color: #CC3300">&quot;O&quot;</span>: [<span style="color: #FF6600">1</span><span style="color: #555555">-</span>(k_oc <span style="color: #555555">+</span> k_oi)<span style="color: #555555">*</span>dt,   k_oc<span style="color: #555555">*</span>dt,   k_oi<span style="color: #555555">*</span>dt],
+     <span style="color: #CC3300">&quot;C&quot;</span>: [k_co<span style="color: #555555">*</span>dt,  <span style="color: #FF6600">1</span><span style="color: #555555">-</span>(k_co <span style="color: #555555">+</span> k_ci)<span style="color: #555555">*</span>dt,    k_ci<span style="color: #555555">*</span>dt],
+     <span style="color: #CC3300">&quot;I&quot;</span>: [k_io<span style="color: #555555">*</span>dt,  k_ic<span style="color: #555555">*</span>dt,   <span style="color: #FF6600">1</span> <span style="color: #555555">-</span> (k_io <span style="color: #555555">+</span> k_ic)<span style="color: #555555">*</span>dt]}
+
+states <span style="color: #555555">=</span> [<span style="color: #CC3300">&quot;O&quot;</span>,<span style="color: #CC3300">&quot;C&quot;</span>,<span style="color: #CC3300">&quot;I&quot;</span>]
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>M[<span style="color: #CC3300">&quot;O&quot;</span>],M[<span style="color: #CC3300">&quot;C&quot;</span>],M[<span style="color: #CC3300">&quot;I&quot;</span>]
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>([0.986, 0.009000000000000001, 0.005],
+ [0.006, 0.986, 0.008],
+ [0.003, 0.0072, 0.9898])
+</pre></div>
+
+
+<h3 id="simulation">Simulation</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>current_state <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;O&quot;</span>
+T <span style="color: #555555">=</span><span style="color: #FF6600">100</span>
+N <span style="color: #555555">=</span><span style="color: #FF6600">10000</span>
+
+SS <span style="color: #555555">=</span> [[<span style="color: #CC3300">&quot;O&quot;</span> <span style="color: #006699; font-weight: bold">for</span> n <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span> (T)] <span style="color: #006699; font-weight: bold">for</span> t <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(N)]
+
+<span style="color: #006699; font-weight: bold">for</span> n <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(N):
+    no,nc,ni <span style="color: #555555">=</span><span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>
+    <span style="color: #006699; font-weight: bold">for</span> t <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(T):
+        new_state <span style="color: #555555">=</span> np<span style="color: #555555">.</span>random<span style="color: #555555">.</span>choice(states, p <span style="color: #555555">=</span> M[current_state])
+        <span style="color: #0099FF; font-style: italic">#print(new_state)</span>
+        SS[n][t] <span style="color: #555555">=</span> new_state
+        current_state <span style="color: #555555">=</span> new_state 
+</pre></div>
+
+
+<h4 id="counting-and-ensamble-everage-of-states">Counting and Ensamble everage of states</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>ss <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array(SS)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Data <span style="color: #555555">=</span> []
+X <span style="color: #555555">=</span> []
+<span style="color: #006699; font-weight: bold">for</span> t <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(T):
+    X<span style="color: #555555">.</span>append(t)
+    o <span style="color: #555555">=</span> <span style="color: #336666">list</span>(ss[:,t])<span style="color: #555555">.</span>count(<span style="color: #CC3300">&quot;O&quot;</span>)<span style="color: #555555">/</span><span style="color: #336666">float</span>(N)
+    c <span style="color: #555555">=</span> <span style="color: #336666">list</span>(ss[:,t])<span style="color: #555555">.</span>count(<span style="color: #CC3300">&quot;C&quot;</span>)<span style="color: #555555">/</span><span style="color: #336666">float</span>(N)
+    i <span style="color: #555555">=</span> <span style="color: #336666">list</span>(ss[:,t])<span style="color: #555555">.</span>count(<span style="color: #CC3300">&quot;I&quot;</span>)<span style="color: #555555">/</span><span style="color: #336666">float</span>(N)
+    Data<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;O&quot;</span>:o,<span style="color: #CC3300">&quot;C&quot;</span>:c,<span style="color: #CC3300">&quot;I&quot;</span>:i})
+</pre></div>
+
+
+<h4 id="data-frame">Data Frame</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DF <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame(Data)
+DF<span style="color: #555555">.</span>head()
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>C</th>
+      <th>I</th>
+      <th>O</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.3690</td>
+      <td>0.3933</td>
+      <td>0.2377</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.3688</td>
+      <td>0.3925</td>
+      <td>0.2387</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.3700</td>
+      <td>0.3921</td>
+      <td>0.2379</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.3718</td>
+      <td>0.3906</td>
+      <td>0.2376</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.3706</td>
+      <td>0.3907</td>
+      <td>0.2387</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h4 id="mean-and-standard-deviation-of-states">Mean and Standard deviation of states</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DF[<span style="color: #CC3300">&#39;C&#39;</span>]<span style="color: #555555">.</span>mean(),DF[<span style="color: #CC3300">&#39;C&#39;</span>]<span style="color: #555555">.</span>std(),
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>(0.36810600000000016, 0.0020315103601592412)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DF[<span style="color: #CC3300">&#39;O&#39;</span>]<span style="color: #555555">.</span>mean(),DF[<span style="color: #CC3300">&#39;O&#39;</span>]<span style="color: #555555">.</span>std(),
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>(0.23638799999999993, 0.002197670024219635)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DF[<span style="color: #CC3300">&#39;I&#39;</span>]<span style="color: #555555">.</span>mean(),DF[<span style="color: #CC3300">&#39;I&#39;</span>]<span style="color: #555555">.</span>std(),
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>(0.3955060000000002, 0.00228507763500057)
+</pre></div>
+
+
+<h3 id="plot-equilibrium">Plot: Equilibrium</h3>
+<p>The plot represents how fraction of states fluctuate through time 0 to T. The plot shows clear equilibrium as there in no significant change in the values. As we increase the total population of ion channels (N). The error minimizes. Theoretically for N = infinity, the expectation value converges to the analytical value.</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #0099FF; font-style: italic"># plot results</span>
+plt<span style="color: #555555">.</span>figure(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">10</span>,<span style="color: #FF6600">4</span>])
+plt<span style="color: #555555">.</span>plot(X,DF[<span style="color: #CC3300">&#39;O&#39;</span>],color <span style="color: #555555">=</span><span style="color: #CC3300">&quot;orange&quot;</span>,linewidth<span style="color: #555555">=</span><span style="color: #FF6600">2</span>,label<span style="color: #555555">=</span><span style="color: #CC3300">&#39;open&#39;</span>)
+plt<span style="color: #555555">.</span>plot(X,DF[<span style="color: #CC3300">&#39;C&#39;</span>],color <span style="color: #555555">=</span><span style="color: #CC3300">&quot;magenta&quot;</span>, linewidth<span style="color: #555555">=</span><span style="color: #FF6600">2</span>,label<span style="color: #555555">=</span><span style="color: #CC3300">&#39;closed&#39;</span>)
+plt<span style="color: #555555">.</span>plot(X,DF[<span style="color: #CC3300">&#39;I&#39;</span>],color <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;blue&quot;</span>,linewidth<span style="color: #555555">=</span><span style="color: #FF6600">2</span>,label<span style="color: #555555">=</span><span style="color: #CC3300">&#39;inactive&#39;</span>)
+plt<span style="color: #555555">.</span>grid(<span style="color: #336666">True</span>)
+plt<span style="color: #555555">.</span>xlabel(<span style="color: #CC3300">&#39;Time(t)&#39;</span>,fontsize<span style="color: #555555">=</span><span style="color: #FF6600">15</span>)
+plt<span style="color: #555555">.</span>ylabel(<span style="color: #CC3300">&#39;Fraction of states: y(t)&#39;</span>,fontsize<span style="color: #555555">=</span><span style="color: #FF6600">15</span>)
+plt<span style="color: #555555">.</span>title(<span style="color: #CC3300">&quot;Plot of fraction of states out of N states&quot;</span>,fontsize<span style="color: #555555">=</span><span style="color: #FF6600">15</span>)
+plt<span style="color: #555555">.</span>legend()
+plt<span style="color: #555555">.</span>savefig(<span style="color: #CC3300">&quot;Sim.png&quot;</span>)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<p><img alt="png" src="../output_43_0.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>I <span style="color: #555555">=</span> <span style="color: #FF6600">0.4</span>
+C <span style="color: #555555">=</span><span style="color: #FF6600">0.36</span>
+O <span style="color: #555555">=</span> <span style="color: #FF6600">0.24</span>
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../Four States Model/Four States Model/" class="btn btn-neutral float-right" title="Four States">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../Random States/Random States/" class="btn btn-neutral" title="Random States"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../Random States/Random States/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../Four States Model/Four States Model/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>
