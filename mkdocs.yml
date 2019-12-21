@@ -1,0 +1,78 @@
+
+site_name: PyNCX
+
+
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+markdown_extensions:
+    - mdx_math
+    
+theme:
+  name: 'rtd-dropdown'
+  highlightjs: true
+  hljs_languages: []
+  include_homepage_in_sidebar: true
+  prev_next_buttons_location: bottom
+  navigation_depth: 4
+  titles_only: false
+  sticky_navigation: true
+  collapse_navigation: true
+ 
+ 
+  
+      
+markdown_extensions:
+  - codehilite:
+      linenums: false
+      guess_lang: false
+      use_pygments: true
+      noclasses: true
+      pygments_style: manni
+
+
+
+nav:
+- Home: index.md
+- Why Codes?: WhyCodes.md
+
+- Getting started:
+  - Guide to starting Python: GettingStarted/anaconda.md
+  - Guide to Python Libraries: GettingStarted/lib.md
+  - Setting up Python Environment: GettingStarted/env.md
+  - Installing Jupyter Notebook : GettingStarted/jupyter.md
+  - How to Git: GettingStarted/git.md
+  
+         
+  
+- Markov Model:
+  - Random Process: markov/Random Process/Random Process.md
+  - Random States: markov/Random States/Random States.md
+  - Three States: markov/Three States Model/Three States Model.md
+  - Four States: markov/Four States Model/Four States Model.md
+ 
+ 
+- Simultaneous Diff Eqn:
+  - Introduction: ode/Introduction/Introduction.md
+  - Three States Model: ode/Three-States-Model/Three-States-Model.md
+  - Five States Model: ode/Five-States-Model/Five-States-Model.md
+  
+
+  
+- Algebraic Method:
+  - Five States Model: algebra/Five-States-Model/Five-States-Model.md
+  
+  
+- NCX:
+  - Simulation: ncx/NCX Model/NCX Model.md
+ 
+  
+  
+  
+- References:
+  - Reference: References/ref.md
+ 
+ 
+ 
+ 
+ 

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Random Process - PyNCX</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Random Process";
+    var mkdocs_page_input_path = "markov/Random Process/Random Process.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> PyNCX</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../..">Home</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../../WhyCodes/">Why Codes?</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Getting started</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/anaconda/">Guide to starting Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/lib/">Guide to Python Libraries</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/env/">Setting up Python Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/jupyter/">Installing Jupyter Notebook</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/git/">How to Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Markov Model</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Random Process
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#introduction-to-random-process">
+      Introduction to Random Process
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#q-generate-a-deterministic-random-process-example-using-gaussian-noise-over-a-sine-wave">Q: Generate a deterministic random process example using gaussian noise over a sine wave.</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#q-generate-a-stocastic-random-process-example-using-random-walk-in-1d">Q: Generate a stocastic random process example using random walk in 1d.</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#markov-process">Markov Process</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#discrite-time-markov-process">Discrite Time Markov Process</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../Random States/Random States/">Random States</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../Three States Model/Three States Model/">Three States</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../Four States Model/Four States Model/">Four States</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Simultaneous Diff Eqn</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../ode/Introduction/Introduction/">Introduction</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../ode/Three-States-Model/Three-States-Model/">Three States Model</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../ode/Five-States-Model/Five-States-Model/">Five States Model</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Algebraic Method</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algebra/Five-States-Model/Five-States-Model/">Five States Model</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">NCX</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../ncx/NCX Model/NCX Model/">Simulation</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">References</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../References/ref/">Reference</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">PyNCX</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Markov Model &raquo;</li>
+        
+      
+    
+    <li>Random Process</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="introduction-to-random-process">Introduction to Random Process</h2>
+<p><strong>Random Process</strong>
+- A rando process in which we can deterministically find the state of each random variable given the initial conditions  are known as deterministic random processes (height of a bouncing ball).
+- A random processes, in which we can't determine the state of a process, even if we are given the initial conditions and all the parameters of the system, are known as stochastic random processes (stock market)</p>
+<h4 id="q-generate-a-deterministic-random-process-example-using-gaussian-noise-over-a-sine-wave">Q: Generate a deterministic random process example using gaussian noise over a sine wave.</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
+sns<span style="color: #555555">.</span>set()
+
+mu <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>,
+sigma <span style="color: #555555">=</span> <span style="color: #FF6600">0.1</span>
+x <span style="color: #555555">=</span> np<span style="color: #555555">.</span>arange(<span style="color: #555555">-</span>np<span style="color: #555555">.</span>pi, np<span style="color: #555555">.</span>pi, <span style="color: #FF6600">0.1</span>)
+s <span style="color: #555555">=</span> np<span style="color: #555555">.</span>random<span style="color: #555555">.</span>normal(mu, sigma, <span style="color: #336666">len</span>(x))
+y <span style="color: #555555">=</span> np<span style="color: #555555">.</span>sin(x) <span style="color: #555555">+</span> s
+yy <span style="color: #555555">=</span>np<span style="color: #555555">.</span>sin(x)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #336666">len</span>(s),<span style="color: #336666">len</span>(s)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>(63, 63)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>plt<span style="color: #555555">.</span>figure(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">10</span>,<span style="color: #FF6600">6</span>])
+plt<span style="color: #555555">.</span>plot(x,y,<span style="color: #CC3300">&#39;-&#39;</span>)
+plt<span style="color: #555555">.</span>plot(x,yy,<span style="color: #CC3300">&quot;-&quot;</span>)
+plt<span style="color: #555555">.</span>scatter(x,y)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<p><img alt="png" src="../output_5_0.png" /></p>
+<h4 id="q-generate-a-stocastic-random-process-example-using-random-walk-in-1d">Q: Generate a stocastic random process example using random walk in 1d.</h4>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">random</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">random</span>
+
+<span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;X stores 1-D coordinate&#39;&#39;&#39;</span>
+X <span style="color: #555555">=</span> []
+<span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;T stores time coordinate&#39;&#39;&#39;</span>
+T <span style="color: #555555">=</span> []
+<span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;starting point&#39;&#39;&#39;</span>
+x <span style="color: #555555">=</span> <span style="color: #FF6600">0</span>
+<span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;length of each step&#39;&#39;&#39;</span>
+d <span style="color: #555555">=</span> <span style="color: #FF6600">1</span>
+
+<span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;iteratefor N steps&#39;&#39;&#39;</span>
+<span style="color: #006699; font-weight: bold">for</span> t <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(<span style="color: #FF6600">100</span>):
+
+    <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Walk one step ahead&#39;&#39;&#39;</span>
+    x <span style="color: #555555">=</span> x <span style="color: #555555">+</span> d<span style="color: #555555">*</span>random<span style="color: #555555">.</span>choice([<span style="color: #555555">-</span><span style="color: #FF6600">1</span>,<span style="color: #FF6600">1</span>])
+
+    <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;collect time&#39;&#39;&#39;</span>
+    T<span style="color: #555555">.</span>append(t)
+    <span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;collect position&#39;&#39;&#39;</span>
+    X<span style="color: #555555">.</span>append(x)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #CC3300; font-style: italic">&#39;&#39;&#39;Make a plot&#39;&#39;&#39;</span>    
+plt<span style="color: #555555">.</span>figure(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">12</span>,<span style="color: #FF6600">6</span>])
+plt<span style="color: #555555">.</span>scatter(T,X,marker <span style="color: #555555">=</span> <span style="color: #CC3300">&#39;.&#39;</span>)
+plt<span style="color: #555555">.</span>plot(T,X)
+plt<span style="color: #555555">.</span>xlabel(<span style="color: #CC3300">&quot;Time&quot;</span>)
+plt<span style="color: #555555">.</span>ylabel(<span style="color: #CC3300">&#39;Displacement&#39;</span>)
+plt<span style="color: #555555">.</span>grid(<span style="color: #336666">True</span>)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<p><img alt="png" src="../output_8_0.png" /></p>
+<h3 id="markov-process">Markov Process</h3>
+<p>A stochastic process is called a Markov process if the state of the random variable at the next instance of time depends only on the outcome of the random variable at the current time. In simplistic mathematical terms, for a stochastic process,</p>
+<p>$S = {R_1, R_2, . . ., R_n} = {R}_{t=1, . . ., n}$, </p>
+<p>to be a Markov process, it must satisfy the following condition:</p>
+<p>$P(R_{n+1} | R_1, R_2,..., R_n) = P(R_{n+1} | R_n)$</p>
+<p>According to the previous condition, the probability distribution for any variable at any given instance in a Markov process is a conditional distribution, which is conditioned only on the random variable at the last time instance. This property of a system, such that <strong>the future states of the system depend only on the current state of the system</strong>, is also known as the <strong>Markov property</strong>. Systems satisfying the Markov property are also known as <strong>memoryless systems</strong> since they don't need to remember the previous states to compute the distribution of the next state, or, in other words, the next state depends only on the current state of the system.</p>
+<h3 id="discrite-time-markov-process">Discrite Time Markov Process</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
+
+<span style="color: #006699; font-weight: bold">class</span> <span style="color: #00AA88; font-weight: bold">MarkovChain</span>(<span style="color: #336666">object</span>):
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">__init__</span>(<span style="color: #336666">self</span>, transition_prob):
+        <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #CC3300; font-style: italic">        Initialize the MarkovChain instance.</span>
+
+<span style="color: #CC3300; font-style: italic">        Parameters</span>
+<span style="color: #CC3300; font-style: italic">        ----------</span>
+<span style="color: #CC3300; font-style: italic">        transition_prob: dict</span>
+<span style="color: #CC3300; font-style: italic">            A dict object representing the transition probabilities in </span>
+<span style="color: #CC3300; font-style: italic">            Markov Chain. Should be of the form: {&#39;state1&#39;: {&#39;state1&#39;: </span>
+<span style="color: #CC3300; font-style: italic">            0.1, &#39;state2&#39;: 0.4}, &#39;state2&#39;: {...}}</span>
+<span style="color: #CC3300; font-style: italic">        &quot;&quot;&quot;</span>
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>transition_prob <span style="color: #555555">=</span> transition_prob
+        <span style="color: #336666">self</span><span style="color: #555555">.</span>states <span style="color: #555555">=</span> <span style="color: #336666">list</span>(transition_prob<span style="color: #555555">.</span>keys())
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">next_state</span>(<span style="color: #336666">self</span>, current_state):
+        <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #CC3300; font-style: italic">        Returns the state of the random variable at the next time </span>
+<span style="color: #CC3300; font-style: italic">        instance.</span>
+
+<span style="color: #CC3300; font-style: italic">        Parameters</span>
+<span style="color: #CC3300; font-style: italic">        ----------</span>
+<span style="color: #CC3300; font-style: italic">        current_state: str</span>
+<span style="color: #CC3300; font-style: italic">            The current state of the system.</span>
+<span style="color: #CC3300; font-style: italic">        &quot;&quot;&quot;</span>
+        <span style="color: #006699; font-weight: bold">return</span> np<span style="color: #555555">.</span>random<span style="color: #555555">.</span>choice(
+            <span style="color: #336666">self</span><span style="color: #555555">.</span>states, p<span style="color: #555555">=</span>[<span style="color: #336666">self</span><span style="color: #555555">.</span>transition_prob[current_state][next_state] 
+                            <span style="color: #006699; font-weight: bold">for</span> next_state <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>states])
+
+    <span style="color: #006699; font-weight: bold">def</span> <span style="color: #CC00FF">generate_states</span>(<span style="color: #336666">self</span>, current_state, no<span style="color: #555555">=</span><span style="color: #FF6600">10</span>):
+        <span style="color: #CC3300; font-style: italic">&quot;&quot;&quot;</span>
+<span style="color: #CC3300; font-style: italic">        Generates the next states of the system.</span>
+
+<span style="color: #CC3300; font-style: italic">        Parameters</span>
+<span style="color: #CC3300; font-style: italic">        ----------</span>
+<span style="color: #CC3300; font-style: italic">        current_state: str</span>
+<span style="color: #CC3300; font-style: italic">            The state of the current random variable.</span>
+
+<span style="color: #CC3300; font-style: italic">        no: int</span>
+<span style="color: #CC3300; font-style: italic">            The number of future states to generate.</span>
+<span style="color: #CC3300; font-style: italic">        &quot;&quot;&quot;</span>
+        future_states <span style="color: #555555">=</span> []
+        <span style="color: #006699; font-weight: bold">for</span> i <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(no):
+            next_state <span style="color: #555555">=</span> <span style="color: #336666">self</span><span style="color: #555555">.</span>next_state(current_state)
+            future_states<span style="color: #555555">.</span>append(next_state)
+            current_state <span style="color: #555555">=</span> next_state
+        <span style="color: #006699; font-weight: bold">return</span> future_states
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>weather_chain <span style="color: #555555">=</span> MarkovChain(transition_prob<span style="color: #555555">=</span>transition_prob)
+
+transition_prob <span style="color: #555555">=</span> {<span style="color: #CC3300">&#39;Sunny&#39;</span>: {<span style="color: #CC3300">&#39;Sunny&#39;</span>: <span style="color: #FF6600">0.8</span>, <span style="color: #CC3300">&#39;Rainy&#39;</span>: <span style="color: #FF6600">0.19</span>, 
+ <span style="color: #CC3300">&#39;Snowy&#39;</span>: <span style="color: #FF6600">0.01</span>},
+ <span style="color: #CC3300">&#39;Rainy&#39;</span>: {<span style="color: #CC3300">&#39;Sunny&#39;</span>: <span style="color: #FF6600">0.2</span>, <span style="color: #CC3300">&#39;Rainy&#39;</span>: <span style="color: #FF6600">0.7</span>,
+ <span style="color: #CC3300">&#39;Snowy&#39;</span>: <span style="color: #FF6600">0.1</span>},
+ <span style="color: #CC3300">&#39;Snowy&#39;</span>: {<span style="color: #CC3300">&#39;Sunny&#39;</span>: <span style="color: #FF6600">0.1</span>, <span style="color: #CC3300">&#39;Rainy&#39;</span>: <span style="color: #FF6600">0.2</span>,
+ <span style="color: #CC3300">&#39;Snowy&#39;</span>: <span style="color: #FF6600">0.7</span>}}
+
+DAYS <span style="color: #555555">=</span> weather_chain<span style="color: #555555">.</span>generate_states(current_state<span style="color: #555555">=</span><span style="color: #CC3300">&#39;Snowy&#39;</span>, no<span style="color: #555555">=</span><span style="color: #FF6600">100</span>)     
+</pre></div>
+
+
+<p><strong>Q: How does tempersture fluctuate ?</strong></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Temp <span style="color: #555555">=</span> {<span style="color: #CC3300">&quot;Snowy&quot;</span>:<span style="color: #FF6600">0</span>,<span style="color: #CC3300">&quot;Rainy&quot;</span>:<span style="color: #FF6600">10</span>, <span style="color: #CC3300">&quot;Sunny&quot;</span>:<span style="color: #FF6600">20</span>}
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>X,Y <span style="color: #555555">=</span> [],[]
+plt<span style="color: #555555">.</span>figure(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">16</span>,<span style="color: #FF6600">4</span>])
+<span style="color: #006699; font-weight: bold">for</span> i,day <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">enumerate</span>(DAYS):
+    X<span style="color: #555555">.</span>append(i)
+    Y<span style="color: #555555">.</span>append(Temp[day])
+plt<span style="color: #555555">.</span>plot(X,Y,<span style="color: #CC3300">&quot;-&quot;</span>)
+plt<span style="color: #555555">.</span>scatter(X,Y)
+plt<span style="color: #555555">.</span>show()
+</pre></div>
+
+
+<p><img alt="png" src="../output_16_0.png" /></p>
+<hr />
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../Random States/Random States/" class="btn btn-neutral float-right" title="Random States">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../../GettingStarted/git/" class="btn btn-neutral" title="How to Git"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../../GettingStarted/git/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../Random States/Random States/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../../img/favicon.ico">
+  <title>Four States - PyNCX</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Four States";
+    var mkdocs_page_input_path = "markov/Four States Model/Four States Model.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../.." class="icon icon-home"> PyNCX</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../..">Home</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../../../WhyCodes/">Why Codes?</a>
+  </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Getting started</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/anaconda/">Guide to starting Python</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/lib/">Guide to Python Libraries</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/env/">Setting up Python Environment</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/jupyter/">Installing Jupyter Notebook</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../GettingStarted/git/">How to Git</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Markov Model</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../Random Process/Random Process/">Random Process</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../Random States/Random States/">Random States</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../Three States Model/Three States Model/">Three States</a>
+  </li>
+        
+          
+
+
+  
+    
+    <li class="navtree toctree-l2 page current">
+      <a class="current" href="./">
+        Four States
+          <span class="toctree-expand"></span>
+      </a>
+    </li>
+    
+      
+
+  <li class="toctree-l2 current with-children">
+    <a href="#four-state-markov-model">
+      Four State Markov Model
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2 current">
+    <ul class="subnav-l2 current">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#model-parameter">Model Parameter</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#1-monte-carlo-simulation">1. Monte Carlo Simulation</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#simulation">Simulation</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#data-frame">Data Frame</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#2-analytical-solution">2. Analytical Solution</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#linear-algebra-approach">Linear Algebra Approach</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Simultaneous Diff Eqn</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../ode/Introduction/Introduction/">Introduction</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../ode/Three-States-Model/Three-States-Model/">Three States Model</a>
+  </li>
+        
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../ode/Five-States-Model/Five-States-Model/">Five States Model</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">Algebraic Method</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../algebra/Five-States-Model/Five-States-Model/">Five States Model</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">NCX</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../ncx/NCX Model/NCX Model/">Simulation</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+      
+  <li class="navtree toctree-l1 label">
+    <p class="caption">References</p>
+  </li>
+
+
+  
+
+  
+    <li class="navtree toctree-l1 group">
+      <ul class="navtree subnav-l1 current">
+          
+
+
+  <li class="navtree toctree-l2 inactive">
+    <a class="" href="../../../References/ref/">Reference</a>
+  </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../..">PyNCX</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Markov Model &raquo;</li>
+        
+      
+    
+    <li>Four States</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="four-state-markov-model">Four State Markov Model</h2>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span><span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">numpy</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">np</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">pandas</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">pd</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">matplotlib.pyplot</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">plt</span>
+<span style="color: #006699; font-weight: bold">import</span> <span style="color: #00CCFF; font-weight: bold">seaborn</span> <span style="color: #006699; font-weight: bold">as</span> <span style="color: #00CCFF; font-weight: bold">sns</span>
+sns<span style="color: #555555">.</span>set()
+<span style="color: #555555">%</span>matplotlib inline
+</pre></div>
+
+
+<h3 id="model-parameter">Model Parameter</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>k_ab,k_ac,k_ad <span style="color: #555555">=</span> <span style="color: #FF6600">0.53</span>,<span style="color: #FF6600">0.62</span>,<span style="color: #FF6600">0.34</span>
+k_ba,k_bc,k_bd <span style="color: #555555">=</span> <span style="color: #FF6600">0.37</span>,<span style="color: #FF6600">0.72</span>,<span style="color: #FF6600">0.44</span>
+k_ca,k_cb,k_cd <span style="color: #555555">=</span> <span style="color: #FF6600">0.61</span>,<span style="color: #FF6600">0.76</span>,<span style="color: #FF6600">0.53</span>
+k_da,k_db,k_dc <span style="color: #555555">=</span> <span style="color: #FF6600">0.35</span>,<span style="color: #FF6600">0.54</span>,<span style="color: #FF6600">0.66</span>
+dt <span style="color: #555555">=</span> <span style="color: #FF6600">0.01</span>
+</pre></div>
+
+
+<h3 id="1-monte-carlo-simulation">1. Monte Carlo Simulation</h3>
+<ul>
+<li>
+<p>Monte carlo simulation is a technique to generate samples based on certain distribution. In statistical Mechanics I used this technique to simulate the system of gas ( Idle and real gas) where we used the Blotzman fraction (based on Hamiltonian of the system Exp(E/KT)) for simulation. </p>
+</li>
+<li>
+<p>In our case, for each of the state we have probability distribution vector. For example if the current state is in state “A”. The probability vector is [$K_{aa}<em>dt, K_{ab}</em>dt, K_{ac}<em>dt, K_{ad}</em>dt$] which represents the probability for state to remain at ‘A’, go to ‘B’,'C' state and go to ‘D’ state respectively.</p>
+</li>
+</ul>
+<p><img alt="img" src="../img/markov-chain.png" /></p>
+<ul>
+<li>How do we do monte carlo simulation? We start with N number of ion channels. For each ion channel we create a Markov chain like  </li>
+</ul>
+<p>---A---C---B---B---D---- </p>
+<p>time 0 to T. In this Markov chain, generation of every new state is totally based on current state only. Not on the history of the past states (Red cross X). Due to this property, it is called memoryless chain of states.</p>
+<ul>
+<li>From simulated data, we can calculate the fraction of the states out of N channels. We can calculate this for any instant of time and make a plot to see whether there is equilibrium or not.</li>
+</ul>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>M <span style="color: #555555">=</span> {<span style="color: #CC3300">&quot;A&quot;</span>: [<span style="color: #FF6600">1</span><span style="color: #555555">-</span>(k_ab <span style="color: #555555">+</span> k_ac <span style="color: #555555">+</span> k_ad)<span style="color: #555555">*</span>dt,   k_ab<span style="color: #555555">*</span>dt,   k_ac<span style="color: #555555">*</span>dt, k_ad<span style="color: #555555">*</span>dt],
+     <span style="color: #CC3300">&quot;B&quot;</span>: [k_ba<span style="color: #555555">*</span>dt,  <span style="color: #FF6600">1</span><span style="color: #555555">-</span>(k_ba <span style="color: #555555">+</span> k_bc <span style="color: #555555">+</span> k_bd)<span style="color: #555555">*</span>dt,    k_bc<span style="color: #555555">*</span>dt, k_bd<span style="color: #555555">*</span>dt],
+     <span style="color: #CC3300">&quot;C&quot;</span>: [k_ca<span style="color: #555555">*</span>dt,  k_cb<span style="color: #555555">*</span>dt,   <span style="color: #FF6600">1</span> <span style="color: #555555">-</span> (k_ca <span style="color: #555555">+</span> k_cb <span style="color: #555555">+</span> k_cd)<span style="color: #555555">*</span>dt, k_cd<span style="color: #555555">*</span>dt],
+     <span style="color: #CC3300">&quot;D&quot;</span>: [k_da<span style="color: #555555">*</span>dt,  k_db<span style="color: #555555">*</span>dt,   k_dc<span style="color: #555555">*</span>dt, <span style="color: #FF6600">1</span> <span style="color: #555555">-</span> (k_da <span style="color: #555555">+</span> k_db <span style="color: #555555">+</span> k_dc)<span style="color: #555555">*</span>dt]}
+
+states <span style="color: #555555">=</span> [<span style="color: #CC3300">&quot;A&quot;</span>,<span style="color: #CC3300">&quot;B&quot;</span>,<span style="color: #CC3300">&quot;C&quot;</span>, <span style="color: #CC3300">&quot;D&quot;</span>]
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>M[<span style="color: #CC3300">&quot;A&quot;</span>],M[<span style="color: #CC3300">&quot;B&quot;</span>],M[<span style="color: #CC3300">&quot;C&quot;</span>],M[<span style="color: #CC3300">&quot;D&quot;</span>]
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>([0.9851, 0.0053, 0.0062, 0.0034000000000000002],
+ [0.0037, 0.9847, 0.0072, 0.0044],
+ [0.0061, 0.0076, 0.981, 0.0053],
+ [0.0034999999999999996, 0.0054, 0.006600000000000001, 0.9845])
+</pre></div>
+
+
+<h3 id="simulation">Simulation</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>current_state <span style="color: #555555">=</span> <span style="color: #CC3300">&quot;A&quot;</span>
+T <span style="color: #555555">=</span><span style="color: #FF6600">1000</span>
+N <span style="color: #555555">=</span><span style="color: #FF6600">10000</span>
+
+SS <span style="color: #555555">=</span> [[<span style="color: #CC3300">&quot;A&quot;</span> <span style="color: #006699; font-weight: bold">for</span> n <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span> (T)] <span style="color: #006699; font-weight: bold">for</span> t <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(N)]
+
+<span style="color: #006699; font-weight: bold">for</span> n <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(N):
+    na,nb,nc,nd <span style="color: #555555">=</span><span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>,<span style="color: #FF6600">0</span>
+    <span style="color: #006699; font-weight: bold">for</span> t <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(T):
+        new_state <span style="color: #555555">=</span> np<span style="color: #555555">.</span>random<span style="color: #555555">.</span>choice(states, p <span style="color: #555555">=</span> M[current_state])
+        <span style="color: #0099FF; font-style: italic">#print(new_state)</span>
+        SS[n][t] <span style="color: #555555">=</span> new_state
+        current_state <span style="color: #555555">=</span> new_state 
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>ss <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array(SS)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Data <span style="color: #555555">=</span> []
+X <span style="color: #555555">=</span> []
+<span style="color: #006699; font-weight: bold">for</span> t <span style="color: #000000; font-weight: bold">in</span> <span style="color: #336666">range</span>(T):
+    X<span style="color: #555555">.</span>append(t)
+    a <span style="color: #555555">=</span> <span style="color: #336666">list</span>(ss[:,t])<span style="color: #555555">.</span>count(<span style="color: #CC3300">&quot;A&quot;</span>)<span style="color: #555555">/</span><span style="color: #336666">float</span>(N)
+    b <span style="color: #555555">=</span> <span style="color: #336666">list</span>(ss[:,t])<span style="color: #555555">.</span>count(<span style="color: #CC3300">&quot;B&quot;</span>)<span style="color: #555555">/</span><span style="color: #336666">float</span>(N)
+    c <span style="color: #555555">=</span> <span style="color: #336666">list</span>(ss[:,t])<span style="color: #555555">.</span>count(<span style="color: #CC3300">&quot;C&quot;</span>)<span style="color: #555555">/</span><span style="color: #336666">float</span>(N)
+    d <span style="color: #555555">=</span> <span style="color: #336666">list</span>(ss[:,t])<span style="color: #555555">.</span>count(<span style="color: #CC3300">&quot;D&quot;</span>)<span style="color: #555555">/</span><span style="color: #336666">float</span>(N)
+
+    Data<span style="color: #555555">.</span>append({<span style="color: #CC3300">&quot;A&quot;</span>:a,<span style="color: #CC3300">&quot;B&quot;</span>:b,<span style="color: #CC3300">&quot;C&quot;</span>:c, <span style="color: #CC3300">&quot;D&quot;</span>:d})
+</pre></div>
+
+
+<h3 id="data-frame">Data Frame</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DF <span style="color: #555555">=</span> pd<span style="color: #555555">.</span>DataFrame(Data)
+DF<span style="color: #555555">.</span>head()
+</pre></div>
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>D</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.2346</td>
+      <td>0.2863</td>
+      <td>0.2580</td>
+      <td>0.2211</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.2351</td>
+      <td>0.2874</td>
+      <td>0.2580</td>
+      <td>0.2195</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.2344</td>
+      <td>0.2884</td>
+      <td>0.2556</td>
+      <td>0.2216</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.2339</td>
+      <td>0.2882</td>
+      <td>0.2565</td>
+      <td>0.2214</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.2341</td>
+      <td>0.2882</td>
+      <td>0.2562</td>
+      <td>0.2215</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>DF<span style="color: #555555">.</span>plot(figsize <span style="color: #555555">=</span> [<span style="color: #FF6600">12</span>,<span style="color: #FF6600">8</span>])   
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>&amp;lt;matplotlib.axes._subplots.AxesSubplot at 0x1a1bf340b8&amp;gt;
+</pre></div>
+
+
+<p><img alt="png" src="../output_14_1.png" /></p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>A <span style="color: #555555">=</span> <span style="color: #FF6600">0.23021616</span>
+B <span style="color: #555555">=</span> <span style="color: #FF6600">0.28749159</span>
+C <span style="color: #555555">=</span> <span style="color: #FF6600">0.26095346</span>
+D <span style="color: #555555">=</span> <span style="color: #FF6600">0.22999999999999998</span>
+</pre></div>
+
+
+<h3 id="2-analytical-solution">2. Analytical Solution</h3>
+<p>$\large{A = \frac{1}{1 + \frac{k_{ab}}{k_{ba}}  + \frac{k_{ac}}{k_{ca}} + \frac{k_{ad}}{k_{da}} }}$</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span> <span style="color: #FF6600">1</span><span style="color: #555555">/</span>(<span style="color: #FF6600">1</span><span style="color: #555555">+</span>(k_ab<span style="color: #555555">/</span>k_ba)<span style="color: #555555">+</span>(k_ac<span style="color: #555555">/</span>k_ca) <span style="color: #555555">+</span> (k_ad<span style="color: #555555">/</span>k_da))
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>0.22623132041537555
+</pre></div>
+
+
+<hr />
+<p>$\large{B = \frac{\frac{k_{ab}}{k_{ba}}}{1 + \frac{k_{ab}}{k_{ba}}  + \frac{k_{ac}}{k_{ca}} + \frac{k_{ad}}{k_{da}} }}$</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span> (k_ab<span style="color: #555555">/</span>k_ba)<span style="color: #555555">/</span>(<span style="color: #FF6600">1</span><span style="color: #555555">+</span>(k_ab<span style="color: #555555">/</span>k_ba)<span style="color: #555555">+</span>(k_ac<span style="color: #555555">/</span>k_ca) <span style="color: #555555">+</span> (k_ad<span style="color: #555555">/</span>k_da))
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>0.3240610805949974
+</pre></div>
+
+
+<hr />
+<p>$\large{C = \frac{\frac{k_{ac}}{k_{ca}}}{1 + \frac{k_{ab}}{k_{ba}}  + \frac{k_{ac}}{k_{ca}} + \frac{k_{ad}}{k_{da}} }}$</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span> (k_ac<span style="color: #555555">/</span>k_ca)<span style="color: #555555">/</span>(<span style="color: #FF6600">1</span><span style="color: #555555">+</span>(k_ab<span style="color: #555555">/</span>k_ba)<span style="color: #555555">+</span>(k_ac<span style="color: #555555">/</span>k_ca) <span style="color: #555555">+</span> (k_ad<span style="color: #555555">/</span>k_da))
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>0.22994003058611942
+</pre></div>
+
+
+<hr />
+<p>$\large{D = \frac{\frac{k_{ad}}{k_{da}}}{1 + \frac{k_{ab}}{k_{ba}}  + \frac{k_{ac}}{k_{ca}} + \frac{k_{ad}}{k_{da}} }}$</p>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>(k_ad<span style="color: #555555">/</span>k_da)<span style="color: #555555">/</span>(<span style="color: #FF6600">1</span><span style="color: #555555">+</span>(k_ab<span style="color: #555555">/</span>k_ba)<span style="color: #555555">+</span>(k_ac<span style="color: #555555">/</span>k_ca) <span style="color: #555555">+</span> (k_ad<span style="color: #555555">/</span>k_da))
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>0.2197675684035077
+</pre></div>
+
+
+<h3 id="linear-algebra-approach">Linear Algebra Approach</h3>
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>B <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array([[(k_ab <span style="color: #555555">+</span> k_ac <span style="color: #555555">+</span> k_ad <span style="color: #555555">+</span> k_da),   (k_da <span style="color: #555555">-</span> k_ba), (k_da <span style="color: #555555">-</span>k_ca)],
+              [(k_db <span style="color: #555555">-</span> k_ab),   (k_ba <span style="color: #555555">+</span> k_bc <span style="color: #555555">+</span> k_bd <span style="color: #555555">+</span> k_db), (k_db <span style="color: #555555">-</span> k_cb)],
+              [(k_dc <span style="color: #555555">-</span> k_ac),   (k_dc <span style="color: #555555">-</span> k_bc), (k_ca <span style="color: #555555">+</span> k_cb <span style="color: #555555">+</span> k_cd <span style="color: #555555">+</span> k_dc)]])
+
+b <span style="color: #555555">=</span> np<span style="color: #555555">.</span>array([k_da,k_db,k_dc])
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>Binv <span style="color: #555555">=</span> np<span style="color: #555555">.</span>linalg<span style="color: #555555">.</span>inv(B)
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>np<span style="color: #555555">.</span>dot(Binv,b), <span style="color: #FF6600">1</span><span style="color: #555555">-</span> <span style="color: #FF6600">0.23</span> <span style="color: #555555">-</span> <span style="color: #FF6600">0.28</span> <span style="color: #555555">-</span> <span style="color: #FF6600">0.26</span>
+</pre></div>
+
+
+<div class="codehilite" style="background: #f0f3f3"><pre style="line-height: 125%"><span></span>(array([0.23021616, 0.28749159, 0.26095346]), 0.22999999999999998)
+</pre></div>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../../ode/Introduction/Introduction/" class="btn btn-neutral float-right" title="Introduction">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../Three States Model/Three States Model/" class="btn btn-neutral" title="Three States"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../../Three States Model/Three States Model/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../../ode/Introduction/Introduction/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+      <script src="../../../search/main.js" defer></script>
+
+</body>
+</html>
